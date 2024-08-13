@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="testbed">
+
+<!-- Include the URDF files -->
+<xacro:include filename="/home/lunasa/ws_urdf/src/urdf_test/urdf/axis.urdf"/>
+<xacro:include filename="/home/lunasa/ws_urdf/src/urdf_test/urdf/ur10e_modified.urdf"/>
+
+<!-- Include a joint to unify the axis and arm -->
+<joint name="axis_to_arm" type="fixed">
+	<origin xyz="0 0 0" rpy="0 0 0"/> 
+	<parent link="axis_link_1"/>
+	<child link="base_link_inertia"/>	            
+</joint>
+
+
+</robot>
